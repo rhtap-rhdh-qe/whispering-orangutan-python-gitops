@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: whispering-orangutan-python-gitops
+  description: This is GitOps manifest for whispering-orangutan-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: whispering-orangutan-python
+    janus-idp.io/tekton: whispering-orangutan-python 
+    backstage.io/kubernetes-id: whispering-orangutan-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:whispering-orangutan-python
